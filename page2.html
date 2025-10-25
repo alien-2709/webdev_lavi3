@@ -1,113 +1,102 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>McLaren Drivers</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+        }
+    </style>
+    <script defer src="app.js"></script>
 </head>
 
-<body class="font-mono bg-gray-200 text-black">
 
-    <header class="bg-orange-500 p-4 text-center text-black">
-        <h1 class="text-2xl font-bold">McLaren Drivers</h1>
-        <nav class="mt-2">
-            <a href="f1.html"
-                class="mx-2 font-bold text-gray-200 hover:text-black hover:bg-gray-200 px-2  rounded transition">Home</a>
-            <a href="f12.html"
-                class="mx-2 font-bold text-gray-200 hover:text-black hover:bg-gray-200 px-2  rounded transition">Drivers</a>
+<body class="bg-gray-200 text-black dark:bg-gray-900 dark:text-gray-100">
+    <header class="sticky top-0 z-50 bg-orange-500/95 dark:bg-orange-600/95 backdrop-blur">
+        <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+            <h1 class="text-xl sm:text-2xl font-bold tracking-wide">McLaren Drivers</h1>
+            <div class="flex items-center gap-2">
+                <button id="themeToggle"
+                    class="rounded-xl px-3 py-1.5 text-sm font-semibold bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 transition"
+                    aria-label="Toggle dark mode">🌙</button>
+                <button id="menuToggle"
+                    class="sm:hidden rounded-xl px-3 py-1.5 text-sm font-semibold bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20"
+                    aria-label="Toggle menu">☰</button>
+            </div>
+        </div>
+        <nav id="mainNav" class="max-w-5xl mx-auto px-4 pb-3 sm:pb-4 hidden sm:block">
+            <div class="flex gap-2">
+                <a href="index.html"
+                    class="nav-link px-3 py-1.5 rounded-lg font-bold text-gray-200 hover:text-black hover:bg-gray-200 transition">Home</a>
+                <a href="page2.html"
+                    class="nav-link px-3 py-1.5 rounded-lg font-bold text-gray-200 hover:text-black hover:bg-gray-200 transition">Drivers</a>
+            </div>
         </nav>
     </header>
 
 
-    <main class="p-6">
-        <h2 class="text-orange-500 text-xl font-semibold">Current Drivers</h2>
-        <div class="flex flex-wrap justify-center gap-6 mt-4">
-            <div
-                class="bg-orange-500 p-3 rounded-lg text-center transition transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/50">
-                <a href="https://en.wikipedia.org/wiki/Lando_Norris" target="_blank" title="know more">
-                    <img src="images/lando.jpeg" alt="Lando Norris" class="w-48 rounded-lg shadow-lg">
-                </a>
-                <p class="mt-2">Lando Norris</p>
-            </div>
-            <div
-                class="bg-orange-500 p-3 rounded-lg text-center transition transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/50">
-                <a href="https://en.wikipedia.org/wiki/Oscar_Piastri" target="_blank" title="know more">
-                    <img src="images/OscarPiastri.jpeg" alt="Oscar Piastri" class="w-48 rounded-lg shadow-lg">
-                </a>
-                <p class="mt-2">Oscar Piastri</p>
-            </div>
-        </div>
-
-        <h2 class="text-orange-500 text-xl font-semibold mt-8">Notable Past Drivers</h2>
-        <div class="flex flex-wrap justify-center gap-6 mt-4">
-
-            <div
-                class="bg-orange-500 p-3 rounded-lg text-center transition transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/50 ">
-                <a href="https://en.wikipedia.org/wiki/Ayrton_Senna" target="_blank" title="know more">
-                    <img src="images/senna.jpeg" height="300" alt="Ayrton Senna" class="w-48 h-48 rounded-lg shadow-lg">
-                </a>
-                <p class="mt-2">Ayrton Senna</p>
+    <main class="max-w-5xl mx-auto px-4 py-8">
+        <section>
+            <h2 class="text-orange-500 text-2xl font-semibold">Current Drivers</h2>
+            <div class="mt-3 flex flex-col sm:flex-row gap-3 items-start sm:items-center">
+                <label for="driverSearch" class="text-sm opacity-75">Search drivers</label>
+                <input id="driverSearch" type="search" placeholder="Type a name (e.g., Lando)"
+                    class="w-full sm:w-72 px-3 py-2 rounded-lg bg-white/90 text-black placeholder-black/50 focus:outline-none focus:ring-2 focus:ring-orange-500" />
             </div>
 
-            <div
-                class="bg-orange-500 p-3 rounded-lg text-center transition transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/50">
-                <a href="https://en.wikipedia.org/wiki/Lewis_Hamilton" target="_blank" title="know more">
-                    <img src="images/lewishamilton.jpeg" height="100" alt="Lewis Hamilton"
-                        class="w-48 h-48 rounded-lg shadow-lg">
-                </a>
-                <p class="mt-2">Lewis Hamilton</p>
-            </div>
 
-            <div
-                class="bg-orange-500 p-3 rounded-lg text-center transition transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/50">
-                <a href="https://en.wikipedia.org/wiki/Fernando_Alonso" target="_blank" title="know more">
-                    <img src="images/Fernando.jpeg" height="300" alt="Fernando Alonso"
-                        class="w-48 h-48 rounded-lg  shadow-lg">
-                </a>
-                <p class="mt-2">Fernando Alonso</p>
+            <div id="driverGrid" class="flex flex-wrap justify-center gap-6 mt-4">
+                <div class="driver-card bg-orange-500 p-3 rounded-lg text-center transition transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/50"
+                    data-name="Lando Norris">
+                    <a href="https://en.wikipedia.org/wiki/Lando_Norris" target="_blank" title="know more"
+                        rel="noopener">
+                        <img loading="lazy" src="images/lando.jpeg" alt="Lando Norris"
+                            class="lightbox w-48 rounded-lg shadow-lg cursor-zoom-in" />
+                    </a>
+                    <p class="mt-2">Lando Norris</p>
+                </div>
+                <div class="driver-card bg-orange-500 p-3 rounded-lg text-center transition transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/50"
+                    data-name="Oscar Piastri">
+                    <a href="https://en.wikipedia.org/wiki/Oscar_Piastri" target="_blank" title="know more"
+                        rel="noopener">
+                        <img loading="lazy" src="images/OscarPiastri.jpeg" alt="Oscar Piastri"
+                            class="lightbox w-48 rounded-lg shadow-lg cursor-zoom-in" />
+                    </a>
+                    <p class="mt-2">Oscar Piastri</p>
+                </div>
             </div>
-
-            <div
-                class="bg-orange-500 p-3 rounded-lg text-center transition transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/50">
-                <a href="https://en.wikipedia.org/wiki/James_Hunt" target="_blank" title="know more">
-                    <img src="images/JamesHunt.jpeg" height="300" alt="James Hunt"
-                        class="w-48 h-48 rounded-lg shadow-lg">
-                </a>
-                <p class="mt-2">James Hunt</p>
-            </div>
-
-            <div
-                class="bg-orange-500 p-3 rounded-lg text-center transition transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/50">
-                <a href="https://en.wikipedia.org/wiki/Carlos_Sainz" target="_blank" title="know more">
-                    <img src="images/carlos.jpeg" height="300" alt="Carlos Sainz"
-                        class="w-48 h-48 rounded-lg shadow-lg">
-                </a>
-                <p class="mt-2">Carlos Sainz</p>
-            </div>
-
-            <div
-                class="bg-orange-500 p-3 rounded-lg text-center transition transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/50">
-                <a href="https://en.wikipedia.org/wiki/Niki_Lauda" target="_blank" title="know more">
-                    <img src="images/nikilauda.jpeg" height="300" alt="Niki Lauda"
-                        class="w-48 h-48 rounded-lg shadow-lg">
-                </a>
-                <p class="mt-2">Niki Lauda</p>
-            </div>
-
-            <div
-                class="bg-orange-500 p-3 rounded-lg text-center transition transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/50 ">
-                <a href="https://en.wikipedia.org/wiki/Alain_Prost" target="_blank" title="know more">
-                    <img src="images/alainprost.jpeg" height="300" alt="Alain Prost"
-                        class="w-48 h-48 rounded-lg shadow-lg">
-                </a>
-                <p class="mt-2">Alain Prost</p>
-            </div>
-        </div>
+        </section>
     </main>
 
 
-    <footer class="text-center py-4 mt-6 bg-gray-900 text-orange-500 text-sm">
+    <button id="backToTop"
+        class="fixed bottom-5 right-5 hidden rounded-full p-3 shadow-lg bg-orange-500 text-black hover:bg-orange-600"
+        aria-label="Back to top">↑</button>
+
+    <div id="lightbox"
+        class="hidden fixed inset-0 bg-black/70 dark:bg-black/80 backdrop-blur flex items-center justify-center p-4">
+        <figure class="max-w-3xl w-full">
+            <img id="lightboxImg" alt="Expanded image" class="w-full rounded-xl shadow-2xl" />
+            <figcaption id="lightboxCap" class="mt-2 text-center text-gray-200"></figcaption>
+            <button id="lightboxClose"
+                class="mt-3 mx-auto block px-4 py-2 rounded-lg bg-white/90 text-black hover:bg-white">Close</button>
+        </figure>
+    </div>
+
+
+    <footer class="text-center py-6 mt-10 bg-gray-900 text-orange-500 text-sm">
         <p>PAPAYA</p>
     </footer>
 </body>
