@@ -1,4 +1,4 @@
-// Mobile menu toggle
+
 const menuToggle = document.getElementById('menuToggle');
 const mainNav = document.getElementById('mainNav');
 if (menuToggle && mainNav) {
@@ -8,7 +8,7 @@ if (menuToggle && mainNav) {
 }
 
 
-// Active nav link
+
 const path = location.pathname.split('/').pop() || 'f1.html';
 document.querySelectorAll('.nav-link').forEach((a) => {
     const isActive = a.getAttribute('href') === path;
@@ -18,7 +18,7 @@ document.querySelectorAll('.nav-link').forEach((a) => {
 });
 
 
-// Theme toggle
+
 const themeBtn = document.getElementById('themeToggle');
 const saved = localStorage.getItem('theme');
 if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -36,7 +36,7 @@ themeBtn.addEventListener('click', () => {
 });
 
 
-// Back to top
+
 const backToTop = document.getElementById('backToTop');
 if (backToTop) {
     window.addEventListener('scroll', () => {
@@ -44,7 +44,7 @@ if (backToTop) {
     });
     backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 }
-// Lightbox
+
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightboxImg');
 const lightboxCap = document.getElementById('lightboxCap');
@@ -63,7 +63,7 @@ if (lightbox) {
 }
 
 
-// Driver search
+
 const driverSearch = document.getElementById('driverSearch');
 if (driverSearch) {
     const cards = document.querySelectorAll('.driver-card');
@@ -75,4 +75,5 @@ if (driverSearch) {
         });
     });
 }
+
 
